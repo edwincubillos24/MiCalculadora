@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(view)
 
-        val totalObserver = Observer<Int> { total ->
+        val totalObserver = Observer<String> { total ->
             mostrarResultado(total)
         }
 
@@ -30,15 +30,15 @@ class MainActivity : AppCompatActivity() {
         mainBinding.calcularButton.setOnClickListener {
             val numero1 = mainBinding.numeroUnoEditText.text.toString().toInt()
             val numero2 = mainBinding.numeroDosEditText.text.toString().toInt()
-            val esSuma = mainBinding.sumarRadioButton.isChecked
-            val esResta = mainBinding.restarRadioButton.isChecked
-            val esMultiplicacion = mainBinding.multiplicarRadioButton.isChecked
-            val esDivision = mainBinding.dividirRadioButton.isChecked
+            val esSuma = mainBinding.sumarCheckBox.isChecked
+            val esResta = mainBinding.restarCheckBox.isChecked
+            val esMultiplicacion = mainBinding.multiplicarCheckBox.isChecked
+            val esDivision = mainBinding.dividirCheckBox.isChecked
             mainViewModel.calcular(numero1, numero2, esSuma, esResta, esMultiplicacion, esDivision)
         }
     }
 
-    fun mostrarResultado(total: Int){
+    fun mostrarResultado(total: String){
         mainBinding.resultadoTextView.text = total.toString()
     }
 }

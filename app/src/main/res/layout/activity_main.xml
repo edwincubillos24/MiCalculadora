@@ -57,6 +57,7 @@
             android:inputType="number"
             android:textColorHint="#757575"
             tools:ignore="TextContrastCheck" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -70,6 +71,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numero_uno_text_input_layout">
+
+
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/numero_dos_edit_text"
@@ -90,7 +93,7 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/sumar_check_box" />
 
     <TextView
         android:id="@+id/resultado_text_view"
@@ -107,45 +110,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calcular_button" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="0dp"
+    <CheckBox
+        android:id="@+id/sumar_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/sumar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numero_dos_text_input_layout" />
+
+    <CheckBox
+        android:id="@+id/restar_check_box"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numero_dos_text_input_layout">
+        android:text="@string/restar"
+        app:layout_constraintStart_toEndOf="@+id/sumar_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/numero_dos_text_input_layout" />
 
-        <RadioButton
-            android:id="@+id/sumar_radio_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:checked="true"
-            android:text="@string/sumar" />
+    <CheckBox
+        android:id="@+id/multiplicar_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/multiplicar"
+        app:layout_constraintStart_toEndOf="@+id/restar_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/numero_dos_text_input_layout" />
 
-        <RadioButton
-            android:id="@+id/restar_radio_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/restar" />
+    <CheckBox
+        android:id="@+id/dividir_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/dividir"
+        app:layout_constraintStart_toEndOf="@+id/multiplicar_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/numero_dos_text_input_layout" />
 
-        <RadioButton
-            android:id="@+id/multiplicar_radio_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/multiplicar" />
-
-        <RadioButton
-            android:id="@+id/dividir_radio_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/dividir" />
-    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
