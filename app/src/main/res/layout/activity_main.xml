@@ -82,45 +82,15 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/sumar_button"
+        android:id="@+id/calcular_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/sumar"
-        android:textAllCaps="true"
+        android:text="@string/calcular"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numero_dos_text_input_layout" />
-
-    <Button
-        android:id="@+id/restar_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/restar"
-        app:layout_constraintStart_toEndOf="@+id/sumar_button"
-        app:layout_constraintTop_toBottomOf="@+id/numero_dos_text_input_layout" />
-
-    <Button
-        android:id="@+id/multiplicar_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/multiplicar"
-        app:layout_constraintStart_toEndOf="@+id/restar_button"
-        app:layout_constraintTop_toBottomOf="@+id/numero_dos_text_input_layout" />
-
-    <Button
-        android:id="@+id/dividir_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/dividir"
-        app:layout_constraintStart_toEndOf="@+id/multiplicar_button"
-        app:layout_constraintTop_toBottomOf="@+id/numero_dos_text_input_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/resultado_text_view"
@@ -135,5 +105,47 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sumar_button" />
+        app:layout_constraintTop_toBottomOf="@+id/calcular_button" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numero_dos_text_input_layout">
+
+        <RadioButton
+            android:id="@+id/sumar_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/sumar" />
+
+        <RadioButton
+            android:id="@+id/restar_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/restar" />
+
+        <RadioButton
+            android:id="@+id/multiplicar_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/multiplicar" />
+
+        <RadioButton
+            android:id="@+id/dividir_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/dividir" />
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

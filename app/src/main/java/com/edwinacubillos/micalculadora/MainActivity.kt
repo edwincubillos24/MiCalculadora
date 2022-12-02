@@ -27,28 +27,14 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.total.observe(this, totalObserver)
 
-        mainBinding.sumarButton.setOnClickListener {
+        mainBinding.calcularButton.setOnClickListener {
             val numero1 = mainBinding.numeroUnoEditText.text.toString().toInt()
             val numero2 = mainBinding.numeroDosEditText.text.toString().toInt()
-            mainViewModel.sumar(numero1, numero2)
-        }
-
-        mainBinding.restarButton.setOnClickListener {
-            val numero1 = mainBinding.numeroUnoEditText.text.toString().toInt()
-            val numero2 = mainBinding.numeroDosEditText.text.toString().toInt()
-            mainViewModel.restar(numero1, numero2)
-        }
-
-        mainBinding.multiplicarButton.setOnClickListener {
-            val numero1 = mainBinding.numeroUnoEditText.text.toString().toInt()
-            val numero2 = mainBinding.numeroDosEditText.text.toString().toInt()
-            mainViewModel.multiplicar(numero1, numero2)
-        }
-
-        mainBinding.dividirButton.setOnClickListener {
-            val numero1 = mainBinding.numeroUnoEditText.text.toString().toInt()
-            val numero2 = mainBinding.numeroDosEditText.text.toString().toInt()
-            mainViewModel.dividir(numero1, numero2)
+            val esSuma = mainBinding.sumarRadioButton.isChecked
+            val esResta = mainBinding.restarRadioButton.isChecked
+            val esMultiplicacion = mainBinding.multiplicarRadioButton.isChecked
+            val esDivision = mainBinding.dividirRadioButton.isChecked
+            mainViewModel.calcular(numero1, numero2, esSuma, esResta, esMultiplicacion, esDivision)
         }
     }
 

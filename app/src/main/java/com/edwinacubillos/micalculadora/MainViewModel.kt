@@ -24,4 +24,14 @@ class MainViewModel : ViewModel() {
     fun restar(numero1: Int, numero2: Int) {
         total.value = numero1 - numero2
     }
+
+    fun calcular(numero1: Int, numero2: Int, esSuma: Boolean, esResta: Boolean, esMultiplicacion: Boolean, esDivision: Boolean) {
+        if (esSuma)
+            sumar(numero1, numero2)
+        else if (esResta)
+            restar(numero1, numero2)
+        else if (esMultiplicacion)
+            multiplicar(numero1, numero2)
+        else dividir(numero1, numero2)
+    }
 }
